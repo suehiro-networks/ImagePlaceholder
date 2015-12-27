@@ -47,15 +47,15 @@
                     $text = ($this->text!='')  ?  $this->text  :  ($w . "x". $h);
                     $bgPadding = 5;
 
-                    $fontFile = ($this->fontFile!='')  ?  $this->fontFile  :  'Arvo-Regular.ttf';
-                    $fontSize = 20;
+                    $fontFile = ($this->fontFile!='')  ?  $this->fontFile  :  './Arvo-Regular.ttf';
+                    $fontSize = min(20, floor($w / strlen($text)), floor($h / 3));
 
                     $lineThickness = 1;
 
 
                     // Create image			
                     $this->image = imagecreatetruecolor($w, $h); 
-                    imageantialias($this->image, true );
+//                    imageantialias($this->image, true );
 
 
                     // Colors
